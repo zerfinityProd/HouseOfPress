@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --------------------------------------------------------------------------
     const themeToggleBtn = document.getElementById('themeToggleBtn');
     const themeIcon = document.getElementById('themeIcon');
-    
+
     // Check saved preference or default to light alabaster
     const savedTheme = localStorage.getItem('hop-theme') || 'light';
     setTheme(savedTheme);
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let mode = 'medium';
             if (val < 35) mode = 'shallow';
             else if (val > 70) mode = 'deep';
-            
+
             virtualCard.setAttribute('data-deboss', mode);
             depthLabel.textContent = `${val}% (${mode.toUpperCase()})`;
         });

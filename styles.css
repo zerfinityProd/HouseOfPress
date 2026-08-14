@@ -712,6 +712,16 @@ img {
     user-select: none;
 }
 
+.sim-deboss-logo-img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
 .sim-deboss-emblem {
     width: 48px;
     height: 48px;

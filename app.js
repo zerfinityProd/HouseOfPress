@@ -115,19 +115,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeFoil = document.querySelector('.foil-pill.active').dataset.foil;
         const activePaper = document.querySelector('.paper-pill.active').dataset.paper;
         const isDarkPaper = activePaper === 'obsidian-black';
+        const simLogo = document.getElementById('simLogo');
 
         if (activeFoil === 'blind') {
             simTitle.style.color = isDarkPaper ? '#2B2B30' : '#E0DDD5';
             simSub.style.color = isDarkPaper ? '#2B2B30' : '#E0DDD5';
-            simEmblem.style.fill = isDarkPaper ? '#2B2B30' : '#E0DDD5';
+            if (simEmblem) simEmblem.style.fill = isDarkPaper ? '#2B2B30' : '#E0DDD5';
+            if (simLogo) simLogo.style.filter = isDarkPaper ? 'grayscale(100%) brightness(0.4) contrast(1.2)' : 'grayscale(100%) opacity(0.35) drop-shadow(1px 1px 1px rgba(0,0,0,0.2))';
         } else if (activeFoil === 'crimson') {
             simTitle.style.color = '#A61C1D';
             simSub.style.color = '#A61C1D';
-            simEmblem.style.fill = '#A61C1D';
+            if (simEmblem) simEmblem.style.fill = '#A61C1D';
+            if (simLogo) simLogo.style.filter = 'drop-shadow(0 2px 6px rgba(166,28,29,0.3))';
         } else if (activeFoil === 'gold') {
             simTitle.style.color = '#D4AF37';
             simSub.style.color = '#D4AF37';
-            simEmblem.style.fill = '#D4AF37';
+            if (simEmblem) simEmblem.style.fill = '#D4AF37';
+            if (simLogo) simLogo.style.filter = 'sepia(1) saturate(4) hue-rotate(5deg) brightness(0.9) drop-shadow(0 2px 6px rgba(212,175,55,0.3))';
         }
     }
 

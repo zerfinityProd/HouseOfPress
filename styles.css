@@ -1,0 +1,1361 @@
+/* ==========================================================================
+   HOUSE OF PRESS - Bespoke Letterpress & Design Studio
+   Premium Minimalism CSS Design System & Theme Engine
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design System Tokens & Color Variables
+   -------------------------------------------------------------------------- */
+:root {
+    /* Brand Signature Color */
+    --brand-crimson: #A61C1D;
+    --brand-crimson-dark: #7A1213;
+    --brand-crimson-light: #C42D2E;
+    --brand-crimson-glow: rgba(166, 28, 29, 0.3);
+
+    /* Metallics & Accents */
+    --accent-gold: #D4AF37;
+    --accent-copper: #C57B57;
+    --accent-gold-gradient: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+    --accent-crimson-gradient: linear-gradient(135deg, #C42D2E 0%, #A61C1D 50%, #7A1213 100%);
+    --accent-crimson-hover: linear-gradient(135deg, #D63335 0%, #B82022 50%, #851213 100%);
+
+    /* Base Canvas - Default Light (Linen / Alabaster Day Theme) */
+    --bg-primary: #FBFBFB;
+    --bg-secondary: #F4F3EF;
+    --bg-tertiary: #EBE9E1;
+    --bg-card: #FFFFFF;
+    --bg-glass: rgba(251, 251, 251, 0.92);
+
+    /* Text & Contrast for Day Theme */
+    --text-primary: #121214;
+    --text-secondary: #2C2C32;
+    --text-muted: #66666E;
+    --text-inverse: #FFFFFF;
+
+    /* Border & Glass Lines */
+    --border-subtle: rgba(18, 18, 20, 0.12);
+    --border-glass: rgba(18, 18, 20, 0.18);
+    --border-focus: var(--brand-crimson);
+
+    /* Deboss Inset Shadows & Lighting */
+    --deboss-shadow-inset: inset 2px 3px 6px rgba(0, 0, 0, 0.35), inset -2px -2px 4px rgba(255, 255, 255, 0.7);
+    --deboss-shadow-drop: 0px 20px 40px rgba(0, 0, 0, 0.08);
+    --card-shadow: 0px 12px 32px rgba(0, 0, 0, 0.06);
+
+    /* Layout & Geometry */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+
+    --header-height: 84px;
+    --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Theme Variables Override (Obsidian Velvet Night Theme) */
+[data-theme="dark"] {
+    --bg-primary: #0B0B0C;
+    --bg-secondary: #121215;
+    --bg-tertiary: #1A1A1E;
+    --bg-card: #161619;
+    --bg-glass: rgba(11, 11, 12, 0.92);
+
+    --text-primary: #F8F8F8;
+    --text-secondary: #CCCCCC;
+    --text-muted: #8E8E98;
+    --text-inverse: #0B0B0C;
+
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --border-glass: rgba(255, 255, 255, 0.2);
+
+    --deboss-shadow-inset: inset 3px 4px 8px rgba(0, 0, 0, 0.85), inset -1px -1px 3px rgba(255, 255, 255, 0.1);
+    --deboss-shadow-drop: 0px 24px 48px rgba(0, 0, 0, 0.45);
+    --card-shadow: 0px 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Typography Setup
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+/* Subtle Paper Texture Overlay */
+.paper-grain-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* High Contrast Display Headings */
+h1, h2, h3, h4, .font-display {
+    font-family: 'Cinzel Decorative', 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.font-sans-bold {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. Floating Glassmorphic Header Navigation
+   -------------------------------------------------------------------------- */
+.header-glass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    padding: 0 clamp(24px, 5vw, 80px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+    z-index: 1000;
+    transition: all var(--transition-smooth);
+}
+
+.header-glass.scrolled {
+    height: 72px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.brand-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.brand-svg-icon {
+    width: 42px;
+    height: 42px;
+    fill: var(--brand-crimson);
+    transition: transform var(--transition-smooth);
+}
+
+.brand-logo-wrap:hover .brand-svg-icon {
+    transform: rotate(180deg) scale(1.05);
+}
+
+.brand-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--brand-crimson);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.brand-sub {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-primary);
+    position: relative;
+    padding: 6px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--brand-crimson);
+    transition: width var(--transition-smooth);
+}
+
+.nav-link:hover {
+    color: var(--brand-crimson);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   3B. Perfectly Centered Round Buttons & Icons
+   -------------------------------------------------------------------------- */
+
+/* Theme Switch Toggle Button - Pixel Perfect Flex Centering */
+.theme-toggle-btn {
+    background: var(--bg-tertiary);
+    border: 1.5px solid var(--border-glass);
+    color: var(--text-primary);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    line-height: 0;
+    transition: all var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--brand-crimson);
+    color: var(--brand-crimson);
+    transform: scale(1.08);
+}
+
+/* Inner span wrapper for theme icon */
+#themeIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+}
+
+#themeIcon svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+}
+
+/* Primary Tactile Button ("Start Project", "Book a Consultation") */
+.btn-primary-press {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--accent-crimson-gradient);
+    color: #FFFFFF !important;
+    padding: 14px 30px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--brand-crimson-dark);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 8px 20px var(--brand-crimson-glow), 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-smooth);
+}
+
+.btn-primary-press:hover {
+    background: var(--accent-crimson-hover);
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0px 14px 28px var(--brand-crimson-glow), 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary-press:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Secondary Glass Button ("Launch Tactile Lab", "Back") */
+.btn-secondary-glass {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--bg-card);
+    color: var(--text-primary) !important;
+    padding: 14px 30px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1.5px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-smooth);
+}
+
+.btn-secondary-glass:hover {
+    background: var(--brand-crimson);
+    color: #FFFFFF !important;
+    border-color: var(--brand-crimson);
+    transform: translateY(-2px);
+    box-shadow: 0px 10px 24px var(--brand-crimson-glow);
+}
+
+:root:not([data-theme="dark"]) .btn-secondary-glass {
+    background: #FFFFFF;
+    color: #121214 !important;
+    border: 1.5px solid rgba(18, 18, 20, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   4. Hero Section - Cinematic Luxury Statement
+   -------------------------------------------------------------------------- */
+.hero-section {
+    min-height: 100vh;
+    padding: calc(var(--header-height) + 60px) clamp(24px, 8vw, 120px) 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: radial-gradient(circle at 50% 30%, rgba(166, 28, 29, 0.08) 0%, transparent 60%);
+}
+
+.hero-emblem-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(300px, 50vw, 650px);
+    height: clamp(300px, 50vw, 650px);
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    border-radius: var(--radius-full);
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--brand-crimson);
+    margin-bottom: 32px;
+    box-shadow: var(--card-shadow);
+    z-index: 1;
+}
+
+.hero-pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--brand-crimson);
+    box-shadow: 0 0 10px var(--brand-crimson);
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 7vw, 6.2rem);
+    line-height: 1.05;
+    font-weight: 700;
+    margin-bottom: 28px;
+    max-width: 1000px;
+    z-index: 1;
+}
+
+.hero-title span.motto-highlight {
+    color: var(--brand-crimson);
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 500;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin-bottom: 48px;
+    line-height: 1.6;
+    z-index: 1;
+}
+
+.hero-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hero-stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-subtle);
+    width: 100%;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--brand-crimson);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   5. Design Philosophy Section - Sticky 2-Column Split
+   -------------------------------------------------------------------------- */
+.section-padding {
+    padding: clamp(80px, 12vw, 160px) clamp(24px, 8vw, 120px);
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+}
+
+@media (min-width: 992px) {
+    .philosophy-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 100px;
+    }
+}
+
+.sticky-headline-col {
+    position: sticky;
+    top: calc(var(--header-height) + 40px);
+    height: fit-content;
+}
+
+.section-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--brand-crimson);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.section-title {
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.philosophy-lead {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.philosophy-cards-col {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.craft-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: clamp(32px, 4vw, 48px);
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.craft-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--brand-crimson);
+}
+
+.craft-card-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--brand-crimson);
+    opacity: 0.35;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.craft-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.craft-card-desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+/* --------------------------------------------------------------------------
+   6. Interactive Letterpress Deboss Simulator Widget
+   -------------------------------------------------------------------------- */
+.simulator-section {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.simulator-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-lg);
+    padding: clamp(24px, 4vw, 48px);
+    box-shadow: var(--deboss-shadow-drop);
+}
+
+@media (min-width: 992px) {
+    .simulator-container {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 64px;
+    }
+}
+
+.sim-preview-stage {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px 24px;
+    overflow: hidden;
+}
+
+/* Virtual 3D Tactile Card Canvas */
+.virtual-card-canvas {
+    width: 320px;
+    height: 190px;
+    background: #FAFAFA;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+    transition: all 0.4s ease;
+    user-select: none;
+}
+
+.sim-deboss-emblem {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.sim-deboss-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.sim-deboss-sub {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    transition: all 0.3s ease;
+}
+
+.sim-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.control-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-pills-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.option-pill {
+    padding: 12px 20px;
+    background: var(--bg-tertiary);
+    color: var(--text-primary) !important;
+    border: 1.5px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+:root:not([data-theme="dark"]) .option-pill {
+    background: #EBE9E1;
+    color: #121214 !important;
+    border: 1.5px solid rgba(18, 18, 20, 0.25);
+}
+
+.option-pill:hover {
+    border-color: var(--brand-crimson);
+    color: var(--brand-crimson) !important;
+}
+
+.option-pill.active {
+    background: var(--brand-crimson) !important;
+    color: #FFFFFF !important;
+    border-color: var(--brand-crimson-dark) !important;
+    font-weight: 800;
+    box-shadow: 0 4px 12px var(--brand-crimson-glow);
+}
+
+.option-pill.active * {
+    color: #FFFFFF !important;
+}
+
+.range-slider-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.custom-range-slider {
+    flex: 1;
+    height: 8px;
+    -webkit-appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.custom-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--brand-crimson);
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--brand-crimson-glow);
+}
+
+/* --------------------------------------------------------------------------
+   7. Portfolio Gallery - Filterable Grid & Centered Arrow Badges
+   -------------------------------------------------------------------------- */
+.gallery-filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+.filter-tab {
+    padding: 12px 26px;
+    background: var(--bg-tertiary);
+    border: 1.5px solid var(--border-glass);
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-primary) !important;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+}
+
+:root:not([data-theme="dark"]) .filter-tab {
+    background: #EBE9E1;
+    color: #121214 !important;
+    border: 1.5px solid rgba(18, 18, 20, 0.25);
+}
+
+.filter-tab:hover {
+    border-color: var(--brand-crimson);
+    color: var(--brand-crimson) !important;
+}
+
+.filter-tab.active {
+    background: var(--brand-crimson) !important;
+    color: #FFFFFF !important;
+    border-color: var(--brand-crimson-dark) !important;
+    box-shadow: 0 4px 14px var(--brand-crimson-glow);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 36px;
+}
+
+.portfolio-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    position: relative;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: var(--deboss-shadow-drop);
+}
+
+.portfolio-img-wrap {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-card:hover .portfolio-img-wrap img {
+    transform: scale(1.08);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(11, 11, 12, 0.92) 0%, transparent 60%);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+    transition: opacity var(--transition-smooth);
+}
+
+.portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.overlay-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    margin-bottom: 6px;
+}
+
+.overlay-title {
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+}
+
+.overlay-desc {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.portfolio-info-body {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-tech-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--brand-crimson);
+}
+
+/* Portfolio Card Arrow Round Badge Centering */
+.portfolio-arrow-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    border: 1.5px solid var(--border-glass);
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 0;
+    transition: all var(--transition-fast);
+}
+
+.portfolio-card:hover .portfolio-arrow-wrap {
+    background: var(--brand-crimson);
+    color: #FFFFFF;
+    border-color: var(--brand-crimson);
+}
+
+.portfolio-arrow-wrap svg {
+    display: block;
+    margin: auto;
+}
+
+/* --------------------------------------------------------------------------
+   8. Process Section - Accordion Icon Centering
+   -------------------------------------------------------------------------- */
+.process-accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.process-accordion-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: border-color var(--transition-fast);
+}
+
+.process-accordion-item.active {
+    border-color: var(--brand-crimson);
+}
+
+.accordion-header {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.accordion-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.accordion-step-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--brand-crimson);
+}
+
+.accordion-title {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+/* Accordion Round Badge & SVG Arrow Centering */
+.accordion-icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    border: 1.5px solid var(--border-glass);
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 0;
+    transition: all var(--transition-smooth);
+}
+
+.process-accordion-item.active .accordion-icon-wrap {
+    background: var(--brand-crimson);
+    color: #FFFFFF;
+    border-color: var(--brand-crimson);
+    transform: rotate(180deg);
+}
+
+.accordion-icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    margin: auto;
+}
+
+.accordion-content-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-smooth), padding var(--transition-smooth);
+    padding: 0 32px;
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.process-accordion-item.active .accordion-content-body {
+    max-height: 200px;
+    padding: 0 32px 28px 76px;
+}
+
+/* --------------------------------------------------------------------------
+   9. Testimonials & Instagram Reels Showcase - Play Button Centering
+   -------------------------------------------------------------------------- */
+.reels-section {
+    background-color: var(--bg-secondary);
+}
+
+.reels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.reel-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-glass);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+}
+
+.reel-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform 0.6s ease;
+}
+
+.reel-card:hover .reel-bg-img {
+    transform: scale(1.05);
+}
+
+.reel-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(11, 11, 12, 0.9) 20%, transparent 80%);
+    z-index: 1;
+}
+
+.reel-content {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF;
+}
+
+/* Optical Center Adjustment for Play Button Circle */
+.reel-play-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(166, 28, 29, 0.95);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 3px; /* Optical center offset for right-pointing play triangle */
+    line-height: 0;
+    margin-bottom: 16px;
+    box-shadow: 0 0 20px rgba(166, 28, 29, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.reel-play-btn svg {
+    display: block;
+    margin: auto;
+}
+
+.reel-card:hover .reel-play-btn {
+    transform: scale(1.15);
+}
+
+.reel-title {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #FFFFFF;
+}
+
+.reel-handle {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   10. Multi-Step Consultation Questionnaire Modal - Round Close Button Centering
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-smooth);
+}
+
+.modal-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-window {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-lg);
+    width: clamp(320px, 90vw, 760px);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: clamp(24px, 4vw, 48px);
+    box-shadow: var(--deboss-shadow-drop);
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: transform var(--transition-smooth);
+}
+
+.modal-backdrop.open .modal-window {
+    transform: translateY(0) scale(1);
+}
+
+/* Pixel-Perfect Centered Modal Close Button */
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: var(--bg-tertiary);
+    border: 1.5px solid var(--border-glass);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 0;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.modal-close-btn svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: auto;
+}
+
+.modal-close-btn:hover {
+    background: var(--brand-crimson);
+    color: #FFFFFF;
+    border-color: var(--brand-crimson);
+    transform: scale(1.08);
+}
+
+.modal-step-indicator {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.step-dot {
+    flex: 1;
+    height: 4px;
+    background: var(--bg-tertiary);
+    border-radius: 2px;
+    transition: background var(--transition-smooth);
+}
+
+.step-dot.active {
+    background: var(--brand-crimson);
+}
+
+.modal-form-step {
+    display: none;
+}
+
+.modal-form-step.active {
+    display: block;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Questionnaire Option Cards in Modal */
+.quiz-option-card {
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    border: 1.5px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary) !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+:root:not([data-theme="dark"]) .quiz-option-card {
+    background: #F4F3EF;
+    color: #121214 !important;
+    border: 1.5px solid rgba(18, 18, 20, 0.2);
+}
+
+.quiz-option-card strong {
+    color: var(--text-primary);
+}
+
+:root:not([data-theme="dark"]) .quiz-option-card strong {
+    color: #121214;
+}
+
+.quiz-option-card.active {
+    background: var(--brand-crimson) !important;
+    color: #FFFFFF !important;
+    border-color: var(--brand-crimson-dark) !important;
+    box-shadow: 0 4px 14px var(--brand-crimson-glow);
+}
+
+.quiz-option-card.active, .quiz-option-card.active * {
+    color: #FFFFFF !important;
+}
+
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.form-input-field {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--bg-tertiary);
+    border: 1.5px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+:root:not([data-theme="dark"]) .form-input-field {
+    background: #FFFFFF;
+    color: #121214;
+    border: 1.5px solid rgba(18, 18, 20, 0.2);
+}
+
+.form-input-field:focus {
+    border-color: var(--brand-crimson);
+}
+
+/* --------------------------------------------------------------------------
+   11. Footer Section
+   -------------------------------------------------------------------------- */
+footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
+    padding: 80px clamp(24px, 8vw, 120px) 40px;
+}
+
+.footer-top-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+.footer-col-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brand-crimson);
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: var(--brand-crimson);
+}
+
+.footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Scroll Reveal Keyframe Utility */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

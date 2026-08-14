@@ -79,13 +79,18 @@
 /* --------------------------------------------------------------------------
    2. Reset & Typography Setup
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
@@ -121,7 +126,11 @@ body {
 }
 
 /* High Contrast Display Headings */
-h1, h2, h3, h4, .font-display {
+h1,
+h2,
+h3,
+h4,
+.font-display {
     font-family: 'Cinzel Decorative', 'Playfair Display', Georgia, serif;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1163,7 +1172,8 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0 0 0 3px; /* Optical center offset for right-pointing play triangle */
+    padding: 0 0 0 3px;
+    /* Optical center offset for right-pointing play triangle */
     line-height: 0;
     margin-bottom: 16px;
     box-shadow: 0 0 20px rgba(166, 28, 29, 0.5);
@@ -1296,8 +1306,15 @@ img {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Questionnaire Option Cards in Modal */
@@ -1334,7 +1351,8 @@ img {
     box-shadow: 0 4px 14px var(--brand-crimson-glow);
 }
 
-.quiz-option-card.active, .quiz-option-card.active * {
+.quiz-option-card.active,
+.quiz-option-card.active * {
     color: #FFFFFF !important;
 }
 

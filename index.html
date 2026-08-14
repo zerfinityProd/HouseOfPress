@@ -15,9 +15,6 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/logo.png">
-
     <!-- CSS stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,8 +27,7 @@
     <!-- Floating Glassmorphic Header Navigation -->
     <header class="header-glass">
         <div class="brand-logo-wrap" onclick="window.scrollTo({top:0, behavior:'smooth'})" id="navLogo">
-            <!-- Uploaded Image Logo -->
-            <img class="brand-img-icon" src="assets/logo.png" alt="House of Press Logo">
+            <img src="assets/logo.png" alt="House of Press Emblem" class="brand-logo-img">
             <div class="brand-logo-text">
                 <span class="brand-title">House of Press</span>
                 <span class="brand-sub">Letterpress & Bespoke Design</span>
@@ -61,19 +57,23 @@
              1. Hero Section - Cinematic Craft Declaration
              ========================================================================== -->
         <section class="hero-section" id="hero">
+            <!-- Authenticity Notice Callout -->
+            <div class="authenticity-banner reveal-on-scroll">
+                <span class="notice-badge">Please Note ✨</span>
+                <span>Official Letterpress Studio of House of Press (India) • Bespoke Business & Brand Cards</span>
+            </div>
+
             <!-- Background SVG Emblem Watermark -->
             <svg class="hero-emblem-watermark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 38 L36 15 L50 28 L64 15 L80 38 Z" fill="none" stroke="var(--brand-crimson)"
-                    stroke-width="1.5" />
-                <path d="M36 15 L50 38 L64 15" fill="none" stroke="var(--brand-crimson)" stroke-width="1.5" />
-                <path d="M20 62 L36 85 L50 72 L64 85 L80 62 Z" fill="none" stroke="var(--brand-crimson)"
-                    stroke-width="1.5" />
-                <path d="M36 85 L50 62 L64 85" fill="none" stroke="var(--brand-crimson)" stroke-width="1.5" />
+                <path d="M20 38 L36 15 L50 28 L64 15 L80 38 Z" fill="none" stroke="var(--brand-crimson)" stroke-width="1.5"/>
+                <path d="M36 15 L50 38 L64 15" fill="none" stroke="var(--brand-crimson)" stroke-width="1.5"/>
+                <path d="M20 62 L36 85 L50 72 L64 85 L80 62 Z" fill="none" stroke="var(--brand-crimson)" stroke-width="1.5"/>
+                <path d="M36 85 L50 62 L64 85" fill="none" stroke="var(--brand-crimson)" stroke-width="1.5"/>
             </svg>
 
             <div class="hero-pill-badge">
                 <span class="hero-pill-dot"></span>
-                <span>Letterpress & Brand Card Studio</span>
+                <span>• Business Cards • Brand Cards • Letterpress Studio •</span>
             </div>
 
             <h1 class="hero-title">
@@ -82,8 +82,7 @@
             </h1>
 
             <p class="hero-subtitle">
-                Where cast-iron precision printing meets architectural minimalism. We craft ultra-heavy cotton business
-                cards, blind debossed identity suites, and tangible works of art designed to be felt.
+                Where cast-iron precision printing meets architectural minimalism. We craft ultra-heavy cotton business cards, blind debossed identity suites, and tangible works of art designed to be felt.
             </p>
 
             <div class="hero-cta-group">
@@ -93,16 +92,16 @@
 
             <div class="hero-stats-row">
                 <div class="stat-item">
-                    <span class="stat-num">600<small style="font-size: 1.2rem;">GSM</small></span>
-                    <span class="stat-label">Virgin Cotton Paper</span>
+                    <span class="stat-num">600–900<small style="font-size: 1.1rem;">GSM</small></span>
+                    <span class="stat-label">Virgin Cotton & Linen Stock</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">23K+</span>
+                    <span class="stat-label">Analog Print Community</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-num">100%</span>
-                    <span class="stat-label">Hand Inked & Pressed</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num">0.8<small style="font-size: 1.2rem;">MM</small></span>
-                    <span class="stat-label">Deep Impression Depth</span>
+                    <span class="stat-label">Cast-Iron Hand Pressed</span>
                 </div>
             </div>
         </section>
@@ -116,9 +115,14 @@
                     <span class="section-tag">Design Philosophy</span>
                     <h2 class="section-title">The Art of Deep Impressions.</h2>
                     <p class="philosophy-lead">
-                        In an era dominated by transient digital pixels, physical tactile presence is the ultimate mark
-                        of luxury. We eliminate visual noise to let texture, light, and depth speak for your brand.
+                        In an era dominated by transient digital pixels, physical tactile presence is the ultimate mark of luxury. We eliminate visual noise to let texture, light, and depth speak for your brand.
                     </p>
+                    <div class="philosophy-quote-card">
+                        <blockquote class="brand-quote">
+                            "We still live in a tactile world—some brands understand it better than others. When a business card feels like your Business.🤌🏼✨"
+                        </blockquote>
+                        <span class="quote-author">— House of Press Studio</span>
+                    </div>
                 </div>
 
                 <div class="philosophy-cards-col">
@@ -126,8 +130,7 @@
                         <div class="craft-card-num">01</div>
                         <h3 class="craft-card-title">Uncompromising Slowness</h3>
                         <p class="craft-card-desc">
-                            True letterpress printing cannot be automated or rushed. Each cotton sheet is hand-fed,
-                            pressure-calibrated, and individually inspected under natural daylight in our studio.
+                            True letterpress printing cannot be automated or rushed. Each cotton sheet is hand-fed, pressure-calibrated, and individually inspected under natural daylight in our studio.
                         </p>
                     </div>
 
@@ -135,9 +138,7 @@
                         <div class="craft-card-num">02</div>
                         <h3 class="craft-card-title">Archival 600–900 GSM Cotton</h3>
                         <p class="craft-card-desc">
-                            We print exclusively on tree-free, 100% cotton paper sourced from historic European mills.
-                            Its plush texture allows deep blind deboss impressions without show-through on the reverse
-                            side.
+                            We print exclusively on tree-free, 100% cotton paper sourced from historic European mills. Its plush texture allows deep blind deboss impressions without show-through on the reverse side.
                         </p>
                     </div>
 
@@ -145,8 +146,7 @@
                         <div class="craft-card-num">03</div>
                         <h3 class="craft-card-title">Hand-Mixed Inks & Foil Alloys</h3>
                         <p class="craft-card-desc">
-                            From rich crimson oil inks mixed by eye to hot stamp brass foils in warm gold, rose bronze,
-                            and deep metallic copper, our palette is tuned for architectural elegance.
+                            From rich crimson oil inks mixed by eye to hot stamp brass foils in warm gold, rose bronze, and deep metallic copper, our palette is tuned for architectural elegance.
                         </p>
                     </div>
                 </div>
@@ -161,8 +161,7 @@
                 <span class="section-tag">Interactive Tactile Lab</span>
                 <h2 class="section-title">Experience Real-Time Letterpress Physics</h2>
                 <p style="color: var(--text-secondary); font-size: 1.05rem;">
-                    Adjust paper weight, ink techniques, and stamping pressure to preview how light and shadows
-                    transform on physical cotton stock.
+                    Adjust paper weight, ink techniques, and stamping pressure to preview how light and shadows transform on physical cotton stock.
                 </p>
             </div>
 
@@ -171,16 +170,15 @@
                 <div class="sim-preview-stage">
                     <div class="virtual-card-canvas" id="virtualCard" data-deboss="medium">
                         <svg class="sim-deboss-emblem" id="simEmblem" viewBox="0 0 100 100">
-                            <path d="M20 38 L36 15 L50 28 L64 15 L80 38 Z" stroke-width="3" stroke-linejoin="round" />
-                            <path d="M36 15 L50 38 L64 15" stroke-width="2" />
-                            <path d="M20 62 L36 85 L50 72 L64 85 L80 62 Z" stroke-width="3" stroke-linejoin="round" />
-                            <path d="M36 85 L50 62 L64 85" stroke-width="2" />
+                            <path d="M20 38 L36 15 L50 28 L64 15 L80 38 Z" stroke-width="3" stroke-linejoin="round"/>
+                            <path d="M36 15 L50 38 L64 15" stroke-width="2"/>
+                            <path d="M20 62 L36 85 L50 72 L64 85 L80 62 Z" stroke-width="3" stroke-linejoin="round"/>
+                            <path d="M36 85 L50 62 L64 85" stroke-width="2"/>
                         </svg>
                         <div class="sim-deboss-title" id="simTitle">House of Press</div>
                         <div class="sim-deboss-sub" id="simSub">Letterpress & Design</div>
                     </div>
-                    <span
-                        style="font-size: 0.75rem; color: var(--text-muted); margin-top: 24px; text-transform: uppercase; letter-spacing: 2px;">
+                    <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 24px; text-transform: uppercase; letter-spacing: 2px;">
                         Interactive 3D Deboss Preview
                     </span>
                 </div>
@@ -190,19 +188,16 @@
                     <div class="control-group">
                         <span class="control-label">Paper Stock & GSM</span>
                         <div class="option-pills-row">
-                            <button class="option-pill paper-pill active" data-paper="cotton-600">600GSM Pure
-                                Cotton</button>
+                            <button class="option-pill paper-pill active" data-paper="cotton-600">600GSM Pure Cotton</button>
                             <button class="option-pill paper-pill" data-paper="duplex-900">900GSM Duplex Linen</button>
-                            <button class="option-pill paper-pill" data-paper="obsidian-black">Obsidian Black
-                                Stock</button>
+                            <button class="option-pill paper-pill" data-paper="obsidian-black">Obsidian Black Stock</button>
                         </div>
                     </div>
 
                     <div class="control-group">
                         <span class="control-label">Print Technique</span>
                         <div class="option-pills-row">
-                            <button class="option-pill foil-pill active" data-foil="blind">Blind Deboss (No
-                                Ink)</button>
+                            <button class="option-pill foil-pill active" data-foil="blind">Blind Deboss (No Ink)</button>
                             <button class="option-pill foil-pill" data-foil="crimson">Signature Crimson Ink</button>
                             <button class="option-pill foil-pill" data-foil="gold">Metallic Gold Foil</button>
                         </div>
@@ -214,14 +209,12 @@
                             <span id="debossDepthLabel" style="color: var(--brand-crimson);">50% (MEDIUM)</span>
                         </div>
                         <div class="range-slider-wrap">
-                            <input type="range" class="custom-range-slider" id="debossDepthSlider" min="10" max="100"
-                                value="50">
+                            <input type="range" class="custom-range-slider" id="debossDepthSlider" min="10" max="100" value="50">
                         </div>
                     </div>
 
                     <div style="padding-top: 16px; border-top: 1px solid var(--border-subtle);">
-                        <button class="btn-primary-press open-consultation-btn" style="width: 100%;">Order This Exact
-                            Spec</button>
+                        <button class="btn-primary-press open-consultation-btn" style="width: 100%;">Order This Exact Spec</button>
                     </div>
                 </div>
             </div>
@@ -248,21 +241,20 @@
             <div class="portfolio-grid">
                 <div class="portfolio-card reveal-on-scroll" data-category="cards">
                     <div class="portfolio-img-wrap">
-                        <img src="assets/card_minimal_deboss.jpg" alt="Minimalist 600gsm Cotton Card">
+                        <img src="assets/card_minimal_deboss.jpg" alt="Western Dhobi Tactile Letterpress Business Card">
                         <div class="portfolio-overlay">
                             <span class="overlay-tag">Business Cards</span>
-                            <h3 class="overlay-title">Aurelien Architectural Firm</h3>
-                            <p class="overlay-desc">600gsm Virgin Cotton • Deep Blind Deboss</p>
+                            <h3 class="overlay-title">Western Dhobi Laundromat</h3>
+                            <p class="overlay-desc">600gsm Virgin Cotton • Deep Blind Deboss • Founder Suite</p>
                         </div>
                     </div>
                     <div class="portfolio-info-body">
                         <div>
-                            <h4 style="font-size: 1.05rem;">Aurelien Architects</h4>
-                            <span class="card-tech-badge">Blind Deboss • 600GSM</span>
+                            <h4 style="font-size: 1.05rem;">Western Dhobi</h4>
+                            <span class="card-tech-badge">Blind Deboss • 600GSM Cotton</span>
                         </div>
                         <div class="portfolio-arrow-wrap">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
                         </div>
@@ -271,44 +263,20 @@
 
                 <div class="portfolio-card reveal-on-scroll" data-category="branding">
                     <div class="portfolio-img-wrap">
-                        <img src="assets/card_gold_crimson.jpg" alt="Luxury Brand Card Gold & Crimson">
+                        <img src="assets/card_gold_crimson.jpg" alt="Monarch Studio Bespoke Brand Card">
                         <div class="portfolio-overlay">
                             <span class="overlay-tag">Brand Identity</span>
-                            <h3 class="overlay-title">Aurelia Veridia Atelier</h3>
-                            <p class="overlay-desc">Crimson Ink Letterpress • Gold Foil • Crimson Edges</p>
+                            <h3 class="overlay-title">Monarch Atelier</h3>
+                            <p class="overlay-desc">Signature Crimson Ink • Gold Foil Stamping • Hand-Gilded Edges</p>
                         </div>
                     </div>
                     <div class="portfolio-info-body">
                         <div>
-                            <h4 style="font-size: 1.05rem;">Aurelia Veridia</h4>
-                            <span class="card-tech-badge">Crimson Ink + Gold Foil</span>
+                            <h4 style="font-size: 1.05rem;">Monarch Atelier</h4>
+                            <span class="card-tech-badge">Crimson Ink + Metallic Gold</span>
                         </div>
                         <div class="portfolio-arrow-wrap">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card reveal-on-scroll" data-category="cards">
-                    <div class="portfolio-img-wrap">
-                        <img src="assets/card_obsidian_foil.jpg" alt="Obsidian Black Card with Copper Foil">
-                        <div class="portfolio-overlay">
-                            <span class="overlay-tag">Business Cards</span>
-                            <h3 class="overlay-title">Lucien Vance Principal</h3>
-                            <p class="overlay-desc">900gsm Duplex Obsidian Black • Copper Foil Stamping</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-info-body">
-                        <div>
-                            <h4 style="font-size: 1.05rem;">Lucien Vance Design</h4>
-                            <span class="card-tech-badge">Copper Foil • 900GSM Duplex</span>
-                        </div>
-                        <div class="portfolio-arrow-wrap">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
                         </div>
@@ -317,21 +285,42 @@
 
                 <div class="portfolio-card reveal-on-scroll" data-category="invitations">
                     <div class="portfolio-img-wrap">
-                        <img src="assets/studio_press_machine.jpg" alt="Studio Heidelberg Press Crafting">
+                        <img src="assets/card_obsidian_foil.jpg" alt="Gulmae Bespoke Identity Suite">
                         <div class="portfolio-overlay">
-                            <span class="overlay-tag">Studio Craft</span>
-                            <h3 class="overlay-title">Heidelberg Cast-Iron Pressing</h3>
-                            <p class="overlay-desc">Precision Hand Pressure Calibration</p>
+                            <span class="overlay-tag">Bespoke Suite</span>
+                            <h3 class="overlay-title">Gulmae Fine Atelier</h3>
+                            <p class="overlay-desc">900gsm Duplex Obsidian Black • Copper Foil Stamping</p>
                         </div>
                     </div>
                     <div class="portfolio-info-body">
                         <div>
-                            <h4 style="font-size: 1.05rem;">Cast-Iron Studio Craft</h4>
-                            <span class="card-tech-badge">Artisan Hand Printing</span>
+                            <h4 style="font-size: 1.05rem;">Gulmae Fine Atelier</h4>
+                            <span class="card-tech-badge">Copper Foil • 900GSM Duplex</span>
                         </div>
                         <div class="portfolio-arrow-wrap">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card reveal-on-scroll" data-category="cards">
+                    <div class="portfolio-img-wrap">
+                        <img src="assets/studio_press_machine.jpg" alt="Studio Platen Press Printing">
+                        <div class="portfolio-overlay">
+                            <span class="overlay-tag">Studio Craft</span>
+                            <h3 class="overlay-title">Cast-Iron Platen Press</h3>
+                            <p class="overlay-desc">Hand-fed precision printing keeping analog craft alive</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-info-body">
+                        <div>
+                            <h4 style="font-size: 1.05rem;">Studio Platen Press</h4>
+                            <span class="card-tech-badge">Analog Hand Pressing</span>
+                        </div>
+                        <div class="portfolio-arrow-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
                         </div>
@@ -357,15 +346,11 @@
                             <h3 class="accordion-title">Typography & Vector Proofing</h3>
                         </div>
                         <div class="accordion-icon-wrap">
-                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                         </div>
                     </div>
                     <div class="accordion-content-body">
-                        We analyze your artwork for deboss suitability. Lines are vector-adjusted to ensure optimal
-                        depth without tearing the paper fibers during pressing.
+                        We analyze your artwork for deboss suitability. Lines are vector-adjusted to ensure optimal depth without tearing the paper fibers during pressing.
                     </div>
                 </div>
 
@@ -376,15 +361,11 @@
                             <h3 class="accordion-title">Photopolymer & Zinc Plate Molding</h3>
                         </div>
                         <div class="accordion-icon-wrap">
-                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                         </div>
                     </div>
                     <div class="accordion-content-body">
-                        High-precision magnesium or zinc plates are etched from your approved proof, creating a
-                        razor-sharp 3D die that will bite deep into the cotton stock.
+                        High-precision magnesium or zinc plates are etched from your approved proof, creating a razor-sharp 3D die that will bite deep into the cotton stock.
                     </div>
                 </div>
 
@@ -395,15 +376,11 @@
                             <h3 class="accordion-title">Hand Inking & Color Matching</h3>
                         </div>
                         <div class="accordion-icon-wrap">
-                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                         </div>
                     </div>
                     <div class="accordion-content-body">
-                        Inks are mixed manually on glass slabs using oil-based Pantone formulas to achieve ultra-rich
-                        opacity and velvety tactile matte finishes.
+                        Inks are mixed manually on glass slabs using oil-based Pantone formulas to achieve ultra-rich opacity and velvety tactile matte finishes.
                     </div>
                 </div>
 
@@ -414,15 +391,11 @@
                             <h3 class="accordion-title">Deep Impression Cast-Iron Pressing</h3>
                         </div>
                         <div class="accordion-icon-wrap">
-                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                         </div>
                     </div>
                     <div class="accordion-content-body">
-                        Using thousands of pounds of pressure on vintage platen presses, each card receives a deep,
-                        tactile bite that catches ambient room light.
+                        Using thousands of pounds of pressure on vintage platen presses, each card receives a deep, tactile bite that catches ambient room light.
                     </div>
                 </div>
 
@@ -433,15 +406,11 @@
                             <h3 class="accordion-title">Edge Painting & Archival Packaging</h3>
                         </div>
                         <div class="accordion-icon-wrap">
-                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                         </div>
                     </div>
                     <div class="accordion-content-body">
-                        Edges are hand-gilded with gold foil or hand-painted in signature crimson ink, then packed in
-                        velvet-lined gift boxes.
+                        Edges are hand-gilded with gold foil or hand-painted in signature crimson ink, then packed in velvet-lined gift boxes.
                     </div>
                 </div>
             </div>
@@ -454,10 +423,7 @@
             <div style="text-align: center; max-width: 700px; margin: 0 auto 56px;" class="reveal-on-scroll">
                 <span class="section-tag">Behind The Press</span>
                 <h2 class="section-title">Instagram Studio Reels</h2>
-                <p style="color: var(--text-secondary); margin-top: 8px;">Follow <a
-                        href="https://www.instagram.com/houseofpress.in/" target="_blank"
-                        style="color: var(--brand-crimson); font-weight: 700;">@houseofpress.in</a> for daily tactile
-                    letterpress craftsmanship</p>
+                <p style="color: var(--text-secondary); margin-top: 8px;">Follow <a href="https://www.instagram.com/houseofpress.in/" target="_blank" style="color: var(--brand-crimson); font-weight: 700;">@houseofpress.in</a> for daily tactile letterpress craftsmanship</p>
             </div>
 
             <div class="reels-grid">
@@ -465,11 +431,8 @@
                     <img src="assets/studio_press_machine.jpg" class="reel-bg-img" alt="Reel Press Machine">
                     <div class="reel-gradient-overlay"></div>
                     <div class="reel-content">
-                        <a href="https://www.instagram.com/houseofpress.in/reel/DaNxHnTTDJC/" target="_blank"
-                            class="reel-play-btn" aria-label="Play Reel">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF">
-                                <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                            </svg>
+                        <a href="https://www.instagram.com/houseofpress.in/reel/DaNxHnTTDJC/" target="_blank" class="reel-play-btn" aria-label="Play Reel">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
                         </a>
                         <h3 class="reel-title">The Sound of Cast-Iron Impression</h3>
                         <span class="reel-handle">@houseofpress.in • Reel #DaNxHnTTDJC</span>
@@ -480,11 +443,8 @@
                     <img src="assets/card_gold_crimson.jpg" class="reel-bg-img" alt="Reel Gold Foil">
                     <div class="reel-gradient-overlay"></div>
                     <div class="reel-content">
-                        <a href="https://www.instagram.com/houseofpress.in/" target="_blank" class="reel-play-btn"
-                            aria-label="Play Reel">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF">
-                                <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                            </svg>
+                        <a href="https://www.instagram.com/houseofpress.in/" target="_blank" class="reel-play-btn" aria-label="Play Reel">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
                         </a>
                         <h3 class="reel-title">Hand-Gilded Crimson Edges</h3>
                         <span class="reel-handle">@houseofpress.in • Studio Reel</span>
@@ -495,11 +455,8 @@
                     <img src="assets/card_minimal_deboss.jpg" class="reel-bg-img" alt="Reel Blind Deboss">
                     <div class="reel-gradient-overlay"></div>
                     <div class="reel-content">
-                        <a href="https://www.instagram.com/houseofpress.in/" target="_blank" class="reel-play-btn"
-                            aria-label="Play Reel">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF">
-                                <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                            </svg>
+                        <a href="https://www.instagram.com/houseofpress.in/" target="_blank" class="reel-play-btn" aria-label="Play Reel">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
                         </a>
                         <h3 class="reel-title">600gsm Cotton Paper Texture Close-Up</h3>
                         <span class="reel-handle">@houseofpress.in • Craft Reel</span>
@@ -515,13 +472,12 @@
     <div class="modal-backdrop" id="consultationModal">
         <div class="modal-window">
             <button class="modal-close-btn" id="closeConsultationBtn" aria-label="Close">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
-
+            
             <div style="margin-bottom: 24px;">
                 <span class="section-tag" style="margin-bottom: 4px;">Tailored Questionnaire</span>
                 <h3 class="font-display" style="font-size: 1.8rem;">Start Your Impression</h3>
@@ -586,33 +542,24 @@
             <!-- Step 4: Contact Details -->
             <div class="modal-form-step" data-step="3">
                 <h4 style="font-size: 1.1rem; margin-bottom: 16px;">Step 4: Contact & Artwork Details</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Provide your contact info
-                    and our press master will send you a proofing guide.</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Provide your contact info and our press master will send you a proofing guide.</p>
                 <div class="form-grid-2">
                     <input type="text" class="form-input-field" placeholder="Full Name" required>
                     <input type="email" class="form-input-field" placeholder="Email Address" required>
                 </div>
-                <input type="text" class="form-input-field" placeholder="Company / Studio Name"
-                    style="margin-top: 16px;">
-                <textarea class="form-input-field" rows="3" placeholder="Special requirements or design links..."
-                    style="margin-top: 16px;"></textarea>
+                <input type="text" class="form-input-field" placeholder="Company / Studio Name" style="margin-top: 16px;">
+                <textarea class="form-input-field" rows="3" placeholder="Special requirements or design links..." style="margin-top: 16px;"></textarea>
             </div>
 
             <!-- Footer Action Bar inside Modal -->
-            <div
-                style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border-subtle);">
                 <div>
-                    <span
-                        style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); display: block;">Estimated
-                        Cost</span>
-                    <span id="liveEstimateSpan"
-                        style="font-weight: 800; color: var(--brand-crimson); font-size: 1.1rem;">$380 - $475 USD</span>
+                    <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); display: block;">Estimated Cost</span>
+                    <span id="liveEstimateSpan" style="font-weight: 800; color: var(--brand-crimson); font-size: 1.1rem;">$380 - $475 USD</span>
                 </div>
                 <div style="display: flex; gap: 12px;">
-                    <button class="btn-secondary-glass" id="prevStepBtn"
-                        style="padding: 10px 20px; font-size: 0.75rem;">Back</button>
-                    <button class="btn-primary-press" id="nextStepBtn"
-                        style="padding: 10px 24px; font-size: 0.75rem;">Next Step</button>
+                    <button class="btn-secondary-glass" id="prevStepBtn" style="padding: 10px 20px; font-size: 0.75rem;">Back</button>
+                    <button class="btn-primary-press" id="nextStepBtn" style="padding: 10px 24px; font-size: 0.75rem;">Next Step</button>
                 </div>
             </div>
         </div>
@@ -624,18 +571,15 @@
     <div class="modal-backdrop" id="lightboxModal">
         <div class="modal-window" style="max-width: 900px; text-align: center;">
             <button class="modal-close-btn" id="closeLightboxBtn" aria-label="Close">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
-            <img id="lightboxImg" src="" alt="Full Screen Preview"
-                style="width: 100%; height: 480px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 24px;">
+            <img id="lightboxImg" src="" alt="Full Screen Preview" style="width: 100%; height: 480px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 24px;">
             <h3 id="lightboxTitle" class="font-display" style="font-size: 1.8rem; margin-bottom: 8px;"></h3>
             <p id="lightboxSpecs" style="color: var(--text-secondary); font-size: 1rem;"></p>
-            <button class="btn-primary-press open-consultation-btn" style="margin-top: 24px;">Request Similar
-                Spec</button>
+            <button class="btn-primary-press open-consultation-btn" style="margin-top: 24px;">Request Similar Spec</button>
         </div>
     </div>
 
@@ -665,9 +609,9 @@
             <div>
                 <div class="footer-col-title">Studio Inquiries</div>
                 <ul class="footer-links">
-                    <li><a href="https://www.instagram.com/houseofpress.in/" target="_blank">Instagram:
-                            @houseofpress.in</a></li>
+                    <li><a href="https://www.instagram.com/houseofpress.in/" target="_blank">Instagram: @houseofpress.in</a></li>
                     <li><a href="mailto:hello@houseofpress.in">hello@houseofpress.in</a></li>
+                    <li><a href="https://www.instagram.com/houseofpress.in/" target="_blank" style="color: var(--brand-crimson); font-weight: 700;">✨ We are hiring! (Design & Print)</a></li>
                     <li><span>Letterpress Studio • India</span></li>
                 </ul>
             </div>
